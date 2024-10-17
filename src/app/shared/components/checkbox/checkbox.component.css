@@ -1,0 +1,23 @@
+/* When checkbox is checked, show the purple background and border */
+input[type="checkbox"]:checked + label .custom-checkbox {
+  @apply bg-purple-1 border-purple-1;
+}
+
+/* Show the check mark when the checkbox is checked */
+input[type="checkbox"]:checked + label .custom-checkbox .check-mark {
+  @apply block; /* Show the checkmark */
+  transform: rotate(5deg) scale(0.6); /* Rotate and slightly scale down */
+}
+
+/* Hide the check mark by default */
+.custom-checkbox .check-mark {
+  @apply hidden w-full h-full bg-white; /* Hide the checkmark by default */
+  clip-path: polygon(
+    14% 44%,
+    /* Checkmark shape */ 0% 65%,
+    50% 100%,
+    100% 20%,
+    80% 0%,
+    43% 62%
+  );
+}
