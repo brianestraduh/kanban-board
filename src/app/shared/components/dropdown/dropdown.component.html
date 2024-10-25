@@ -1,10 +1,15 @@
 <div class="relative inline-block w-full">
   <select
     name="column-dropdown"
-    class="p-4 border border-gray-300 focus:outline-purple-1 bg-transparent appearance-none w-full text-body-m"
+    class="dark:bg-grey-3 dark:text-white-1 p-4 border border-grey-5/25 focus:outline-purple-1 bg-transparent appearance-none w-full text-body-m"
   >
     @for (option of options(); track option) {
-      <option [value]="option" class="text-grey-5">{{ option }}</option>
+      <option
+        [value]="option"
+        class="text-grey-5 dark:bg-grey-2 dark:text-grey-5"
+      >
+        {{ option }}
+      </option>
     }
   </select>
 

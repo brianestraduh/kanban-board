@@ -1,5 +1,5 @@
 <div
-  class="rounded-s flex justify-start items-center w-full bg-grey-7 h-10 hover:bg-purple-1 hover:bg-opacity-25"
+  class="rounded-s flex justify-start items-center w-full bg-grey-7 h-10 hover:bg-purple-1 hover:bg-opacity-25 dark:hover:bg-purple-1 dark:hover:bg-opacity-25 dark:bg-grey-2 dark:text-white-1"
 >
   <input
     title="subtask-checkbox"
@@ -12,7 +12,7 @@
     for="subtask-checkbox"
     class="flex items-center gap-4 font-body-s text-body-s ml-3"
     ><span
-      class="custom-checkbox w-4 h-4 inline-block border border-grey-5b border-opacity-25 rounded-sm bg-white flex-shrink-0"
+      class="dark:bg-grey-3 custom-checkbox w-4 h-4 inline-block border border-grey-5b border-opacity-25 rounded-sm bg-white flex-shrink-0"
       ><span class="check-mark"></span></span
     ><span [ngClass]="[checkboxVal() ? 'line-through opacity-50' : '']">{{
       subtaskTitle

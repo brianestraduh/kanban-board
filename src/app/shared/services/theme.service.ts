@@ -10,11 +10,16 @@ export class ThemeService {
   constructor() {
     this.loadTheme();
   }
-  private loadTheme(): void {
+  loadTheme(): void {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
       this.currentTheme.set(savedTheme);
     }
+    // Check for browser preference
+    const prefersDark = window.matchMedia(
+      '(prefers-color-scheme: dark)',
+    ).matches;
+    this.currentTheme.set(prefersDark ? this.darkTheme : this.lightTheme);
     this.applyTheme();
   }
   private applyTheme(): void {
