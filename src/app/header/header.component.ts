@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { ButtonComponent } from '../shared/components/button/button.component';
 import { ThemeService } from '../shared/services/theme.service';
 
@@ -19,4 +19,5 @@ export class HeaderComponent {
   toggleDarkTheme() {
     this.themeService.toggleTheme();
   }
+  isSidebarOpen = input<boolean>(false);
 }

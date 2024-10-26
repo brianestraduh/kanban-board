@@ -1,6 +1,31 @@
-<app-header></app-header>
-<app-button
-  buttonType="primary-l"
-  (click)="toggleTheme()"
-  text="toggleTheme"
-></app-button>
+<div
+  [ngClass]="[
+    isSidebarOpen()
+      ? 'grid grid-cols-[300px_1fr] h-screen'
+      : 'grid grid-cols-[0_1fr] h-screen',
+  ]"
+>
+  <app-sidebar class="col-span-1">
+    <app-button
+      buttonType="primary-l"
+      (click)="toggleSideBar()"
+      text="toggleSidebar"
+    ></app-button>
+  </app-sidebar>
+
+  <div class="col-span-1 flex flex-col">
+    <app-header class="flex-grow"></app-header>
+    <div class="flex-grow flex items-center justify-center">
+      <app-button
+        buttonType="primary-l"
+        (click)="toggleTheme()"
+        text="toggleTheme"
+      ></app-button>
+      <app-button
+        buttonType="primary-l"
+        (click)="toggleSideBar()"
+        text="toggle sidebar"
+      ></app-button>
+    </div>
+  </div>
+</div>
