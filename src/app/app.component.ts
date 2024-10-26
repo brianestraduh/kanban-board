@@ -1,19 +1,12 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ThemeService } from './shared/services/theme.service';
 import { ButtonComponent } from './shared/components/button/button.component';
-import { CheckboxComponent } from './shared/components/checkbox/checkbox.component';
-import { InputComponent } from './shared/components/input/input.component';
-import { DropdownComponent } from './shared/components/dropdown/dropdown.component';
+import { HeaderComponent } from './header/header.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [
-    ButtonComponent,
-    CheckboxComponent,
-    InputComponent,
-    DropdownComponent,
-  ],
+  imports: [HeaderComponent, ButtonComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

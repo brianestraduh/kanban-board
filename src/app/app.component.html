@@ -1,18 +1,6 @@
-<h1
-  class="dark:text-purple-1 text-red-1 font-sans font-bold underline text-3xl"
->
-  Hello world!
-</h1>
-<div class="flex flex-col w-full">
-  <app-button
-    buttonType="secondary"
-    text=" Toggle Theme"
-    (click)="toggleTheme()"
-  ></app-button>
-  <app-button buttonType="destructive" text="destructive"></app-button>
-  <app-button buttonType="primary-l" text="Primary Large"></app-button>
-  <app-button buttonType="primary-sm" text="Primary Small"></app-button>
-  <app-checkbox subtaskTitle="Learn Tailwind"></app-checkbox>
-  <app-input></app-input>
-  <app-dropdown [options]="options"></app-dropdown>
-</div>
+<app-header></app-header>
+<app-button
+  buttonType="primary-l"
+  (click)="toggleTheme()"
+  text="toggleTheme"
+></app-button>
