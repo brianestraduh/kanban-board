@@ -5,11 +5,13 @@
         class="border-r dark:border-grey-4 border-grey-6 h-full flex justify-center items-center"
       >
         <!-- I will need some conditional logic to only display the Board Name when the side bar is opened. -->
-        <img
-          [src]="getThemeLogoSrc()"
-          alt="logo"
-          class="h-[26px] w-[152px] mr-8"
-        />
+        @if (!isSidebarOpen()) {
+          <img
+            [src]="getThemeLogoSrc()"
+            alt="logo"
+            class="h-[26px] w-[152px] mr-8"
+          />
+        }
       </div>
       <h1 class="ml-8 text-heading-xl font-heading-xl dark:text-white-1">
         Board Name Placeholder
