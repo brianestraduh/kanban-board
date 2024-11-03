@@ -4,6 +4,7 @@ import { ButtonComponent } from './shared/components/button/button.component';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { NgClass } from '@angular/common';
+import { SidebarService } from './shared/services/sidebar.service';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,7 @@ import { NgClass } from '@angular/common';
 })
 export class AppComponent implements OnInit {
   private themeService = inject(ThemeService);
+  private sidebarService = inject(SidebarService);
   options: string[] = ['To Do', 'Doing', 'Done'];
 
   ngOnInit(): void {
@@ -25,6 +27,9 @@ export class AppComponent implements OnInit {
   }
   isSidebarOpen = signal<boolean>(false);
   toggleSideBar(): void {
-    this.isSidebarOpen.set(!this.isSidebarOpen());
+    this.sidebarService.toggleSidebar();
+  }
+  sidebarStatus(): boolean {
+    return this.sidebarService.sideBarOpen;
   }
 }

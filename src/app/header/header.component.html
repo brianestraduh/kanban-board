@@ -1,19 +1,29 @@
 <header class="w-full h-24 bg-white-1 dark:bg-grey-3">
   <div class="flex justify-between h-full">
-    <div class="flex justify-center items-center mr-8 ml-8">
-      <div
-        class="border-r dark:border-grey-4 border-grey-6 h-full flex justify-center items-center"
-      >
-        <!-- I will need some conditional logic to only display the Board Name when the side bar is opened. -->
-        @if (!isSidebarOpen()) {
+    <div
+      [ngClass]="[
+        'flex justify-center items-center mr-8 transition-all duration-300',
+        isSidebarOpen() ? '' : ' ml-8',
+      ]"
+    >
+      @if (!isSidebarOpen()) {
+        <div
+          class="border-r dark:border-grey-4 border-grey-6 h-full flex justify-center items-center"
+        >
           <img
             [src]="getThemeLogoSrc()"
             alt="logo"
             class="h-[26px] w-[152px] mr-8"
           />
-        }
-      </div>
-      <h1 class="ml-8 text-heading-xl font-heading-xl dark:text-white-1">
+        </div>
+      }
+
+      <h1
+        [ngClass]="[
+          'text-heading-xl font-heading-xl dark:text-white-1 transition-all duration-300',
+          isSidebarOpen() ? 'ml-6' : 'ml-8',
+        ]"
+      >
         Board Name Placeholder
       </h1>
     </div>
