@@ -1,19 +1,19 @@
-<div
-  [ngClass]="[
-    'transition-all duration-300',
-    sidebarStatus()
-      ? 'grid grid-cols-[300px_1fr] h-screen'
-      : 'grid grid-cols-[0_1fr] h-screen',
-  ]"
->
-  <app-sidebar class="overflow-hidden"> </app-sidebar>
+<div class="transition-all duration-300 grid grid-cols-[auto_1fr] h-screen">
+  <app-sidebar
+    [ngClass]="[
+      'transition-all duration-500',
+      sidebarStatus()
+        ? 'md:w-[300px]  w-0 overflow-hidden'
+        : 'w-0 overflow-hidden',
+    ]"
+  >
+  </app-sidebar>
 
   <div class="col-span-1 flex flex-col">
-    <app-header
-      class="flex-grow"
-      [isSidebarOpen]="sidebarStatus()"
-    ></app-header>
-    <div class="flex-grow flex items-center justify-center relative">
+    <app-header class="flex-grow"></app-header>
+    <div
+      class="flex-grow flex items-center justify-center relative w-0 md:w-full overflow-hidden"
+    >
       @if (!sidebarStatus()) {
         <button
           (click)="toggleSideBar()"

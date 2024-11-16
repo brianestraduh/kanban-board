@@ -2,6 +2,7 @@ import { Component, inject, input } from '@angular/core';
 import { ButtonComponent } from '../shared/components/button/button.component';
 import { ThemeService } from '../shared/services/theme.service';
 import { NgClass } from '@angular/common';
+import { SidebarService } from '../shared/services/sidebar.service';
 
 @Component({
   selector: 'app-header',
@@ -12,6 +13,7 @@ import { NgClass } from '@angular/common';
 })
 export class HeaderComponent {
   private themeService = inject(ThemeService);
+  private sideBarService = inject(SidebarService);
   getThemeLogoSrc(): string {
     return this.themeService.isDarkTheme()
       ? '/assets/images/logo-light.svg'
@@ -20,5 +22,7 @@ export class HeaderComponent {
   toggleDarkTheme() {
     this.themeService.toggleTheme();
   }
-  isSidebarOpen = input<boolean>(false);
+  sidebarStatus(): boolean {
+    return this.sideBarService.sideBarOpen;
+  }
 }

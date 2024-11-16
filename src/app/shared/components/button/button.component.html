@@ -1,6 +1,6 @@
 <button
   [ngClass]="[
-    'font-sans text-center rounded-full w-full',
+    'font-sans text-center rounded-full w-full  flex justify-center items-center',
     buttonType === 'secondary'
       ? 'bg-purple-1 bg-opacity-10 dark:bg-white text-body-m font-heading-s h-12 text-purple-1 hover:bg-opacity-25'
       : '',
@@ -8,7 +8,7 @@
       ? 'bg-red-1 text-body-m font-heading-s h-12 text-white-1 hover:bg-red-2'
       : '',
     buttonType === 'primary-l'
-      ? 'bg-purple-1  text-heading-m font-heading-l h-12 text-white-1 hover:bg-purple-2'
+      ? 'bg-purple-1  text-heading-m font-heading-l md:h-12 h-8 text-white-1 hover:bg-purple-2'
       : '',
     buttonType === 'primary-sm'
       ? 'bg-purple-1 text-body-m font-heading-s h-10 text-white-1 hover:bg-purple-2'
@@ -16,5 +16,6 @@
   ]"
   type="button"
 >
+  <ng-content></ng-content>
   <span>{{ text }}</span>
 </button>

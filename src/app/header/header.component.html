@@ -2,13 +2,13 @@
   <div class="flex justify-between h-full">
     <div
       [ngClass]="[
-        'flex justify-center items-center mr-8 transition-all duration-300',
-        isSidebarOpen() ? '' : ' ml-8',
+        'flex justify-center items-center mr-8 transition-all duration-300 gap-4',
+        sidebarStatus() ? 'pl-4' : ' md:ml-8 ',
       ]"
     >
-      @if (!isSidebarOpen()) {
+      @if (!sidebarStatus()) {
         <div
-          class="border-r dark:border-grey-4 border-grey-6 h-full flex justify-center items-center"
+          class="md:border-r md:dark:border-grey-4 md:border-grey-6 h-full flex justify-center items-center w-0 overflow-hidden md:w-[209px]"
         >
           <img
             [src]="getThemeLogoSrc()"
@@ -17,15 +17,28 @@
           />
         </div>
       }
-
+      <img
+        class="md:w-0"
+        src="/assets/images/logo-mobile.svg"
+        width="24"
+        height="24"
+        alt="logo mobile"
+      />
       <h1
         [ngClass]="[
           'text-heading-xl font-heading-xl dark:text-white-1 transition-all duration-300',
-          isSidebarOpen() ? 'ml-6' : 'ml-8',
+          sidebarStatus() ? 'md:ml-6 ' : 'md:ml-8 ',
         ]"
       >
         Board Name Placeholder
       </h1>
+      <img
+        class="md:w-0"
+        src="/assets/images/icon-chevron-down.svg"
+        width="24"
+        height="24"
+        alt="chevron down"
+      />
     </div>
     <div
       class="flex h-12 w-48 justify-center items-center gap-6 mr-8 mt-5 mb-5"
@@ -33,8 +46,18 @@
       <app-button
         buttonType="primary-l"
         text="+ Add New Task"
-        class="w-40"
+        class="md:w-40 w-0 overflow-hidden"
       ></app-button>
+      <app-button
+        buttonType="primary-l"
+        text=""
+        class="w-12 md:w-0 overflow-hidden"
+        ><img
+          src="/assets/images/icon-add-task-mobile.svg"
+          alt="Add Task Icon"
+          width="12"
+          height="12"
+      /></app-button>
       <img
         src="/assets/images/icon-vertical-ellipsis.svg"
         class="w-[5px] h-5"
